@@ -4,11 +4,11 @@ RUN echo Asia/Hong_Kong | tee /etc/timezone && dpkg-reconfigure --frontend nonin
 
 RUN apt-get update && apt-get -y install cron rsyslog
 
-ADD crontab /crontab
+ADD crontab /etc/cron.d/example-cron
 ADD start-cron.sh /start-cron.sh
 
-RUN crontab /crontab
 RUN chmod 755 /start-cron.sh
+RUN chmod 0644 /etc/cron.d/example-cron
 RUN touch /var/log/cron.log
 
 CMD /start-cron.sh

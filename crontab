@@ -1,0 +1,4 @@
+SHELL=/bin/bash
+
+* * * * * echo "hello at $(date +'\%Y-\%m-\%d \%H:\%M:\%S')" >> /var/log/cron.log 2>&1
+

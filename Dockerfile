@@ -1,4 +1,4 @@
-FROM ubuntu
+FROM ubuntu:trusty
 
 RUN echo Asia/Hong_Kong | tee /etc/timezone && dpkg-reconfigure --frontend noninteractive tzdata
 
